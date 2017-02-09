@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Feb  7 21:45:55 2017
+
+@author: tooraj
+"""
+
+def multgood(x,y):
+    
+    #x=str(X)
+    #y=str(Y)
+    
+    n=len(x)
+    m=len(y)
+    
+    if m>n:
+        n=m
+    
+    if int(n/2)!=n/2:
+        n=n+1
+    
+    
+    a=x[:n/2]
+    b=x[n/2:]
+    c=y[:n/2]
+    d=y[n/2:]
+    
+    if n>2:
+        ac=multgood(a,c)
+        bd=multgood(b,d)
+    else:
+        ac=str(int(a)*int(c))
+        bd=str(int(b)*int(d))
+
+    step3=multgood(int(a)+int(b),int(c)+int(d))
